@@ -389,6 +389,8 @@ var delta_time := 0.0
 var vehicle_inertia : Vector3
 var current_gravity : Vector3
 
+var teleport_position : Vector3
+
 class Axle:
 	var wheels : Array[Wheel] = []
 	var is_drive_axle := false
@@ -426,6 +428,11 @@ func _ready():
 
 func _integrate_forces(state : PhysicsDirectBodyState3D):
 	current_gravity = state.total_gravity
+	if teleport_position:
+		state.linear_velocity = Vector3.ZERO
+		state.angular_velocity = Vector3.ZERO
+		state.transform = Transform3D.IDENTITY.translated(teleport_position)
+		teleport_position = Vector3()
 
 func initialize():
 	# Check to verify that surface types are provided
