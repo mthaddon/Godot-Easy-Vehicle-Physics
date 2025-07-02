@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://d2xf4wuh2u4t6"]
 
-[ext_resource type="Script" uid="uid://bk1p4mt2e1cpy" path="res://addons/gevp/scenes/demo_arcade.gd" id="1_ichk1"]
+[ext_resource type="Script" uid="uid://bk1p4mt2e1cpy" path="res://addons/gevp/scripts/demo_arcade.gd" id="1_ichk1"]
 [ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="2_mxj5v"]
 [ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="3_mm6o4"]
 [ext_resource type="PackedScene" uid="uid://b2hlchrj4h2b7" path="res://addons/gevp/scenes/engine_sound.tscn" id="4_djqws"]
