@@ -428,11 +428,6 @@ func _ready():
 
 func _integrate_forces(state : PhysicsDirectBodyState3D):
 	current_gravity = state.total_gravity
-	if teleport_position:
-		state.linear_velocity = Vector3.ZERO
-		state.angular_velocity = Vector3.ZERO
-		state.transform = Transform3D.IDENTITY.translated(teleport_position)
-		teleport_position = Vector3()
 
 func initialize():
 	# Check to verify that surface types are provided
@@ -612,6 +607,11 @@ func initialize():
 func _physics_process(delta : float) -> void:
 	if not is_ready:
 		return
+		
+	if teleport_position:
+		global_position = teleport_position
+		previous_global_position = global_position
+		teleport_position = Vector3()
 	
 	## For stability calculations, we need the vehicle body inertia which isn't
 	## available immediately
